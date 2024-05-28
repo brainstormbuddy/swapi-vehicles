@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Star Wars People and Vehicles App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This is a single-page application (SPA) built with React.js that displays a list of people from the Star Wars universe and details about their vehicles. The data is fetched from the Star Wars API (SWAPI).
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **People List**: Displays a list of users with information including name, height, mass, gender, and edited date.
+- **Vehicle Dialog**: A popup displaying detailed information about a user's vehicles.
+- **Filtering**: Server-side filtering of users by name.
+- **Unit Testing**: Jest is used for unit testing to ensure code quality and functionality.
+- **Linting and Formatting**: ESLint and Prettier are used to maintain code quality and formatting.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **JavaScript ES6**
+- **React.js**
+- **Redux Toolkit**
+- **Material-UI (MUI)**
+- **ESLint**
+- **Prettier**
+- **Jest**
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
 
-### `npm run build`
+   ```bash
+   git clone https://github.com/brainstormbuddy/swapi-vehicles.git
+   cd swapi-vehicles
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install the dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Running the Application
 
-### `npm run eject`
+To start the development server, run:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Building for Production
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To build the app for production, run:
 
-## Learn More
+```bash
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The build folder will contain the production-ready files.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Testing
 
-### Code Splitting
+To run the tests, use:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm test
+```
 
-### Analyzing the Bundle Size
+## Linting and Formatting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To check for linting errors, run:
 
-### Making a Progressive Web App
+```bash
+npm run lint
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To format the code using Prettier, run:
 
-### Advanced Configuration
+```bash
+npm run format
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## API Endpoints
 
-### Deployment
+- **People API**: `https://swapi.dev/api/people`
+- **Vehicle API**: `http://swapi.co/api/vehicles/{vehicleId}/`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Application Structure
 
-### `npm run build` fails to minify
+- **Components**:
+  - `PeopleList`: Displays a list of people with the required information and a button to show vehicles.
+  - `VehiclesDialog`: Displays detailed information about a user's vehicles in a popup.
+- **Redux**:
+  - `peopleSlice`: Manages the state of the user list and handles server-side filtering.
+  - `vehiclesSlice`: Manages the state of the vehicle details.
+- **Utilities**:
+  - API utility functions for fetching data from the SWAPI.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+Feel free to reach out if you have any questions or need further assistance. Enjoy exploring the Star Wars universe with this app!

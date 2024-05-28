@@ -1,13 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
-import {
-  Dialog,
-  DialogTitle,
-  List,
-  ListItem,
-  ListItemText,
-} from '@mui/material';
+import React from "react";
+import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
+import { Dialog, DialogTitle, List, ListItem, ListItemText } from "@mui/material";
 
 const VehiclesDialog = ({ open, onClose }) => {
   const { vehicles, loading, error } = useSelector(state => state.vehicles);
@@ -33,7 +27,7 @@ const VehiclesDialog = ({ open, onClose }) => {
 
 VehiclesDialog.propTypes = {
   open: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired
 };
 
 export default VehiclesDialog;

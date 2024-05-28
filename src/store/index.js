@@ -1,12 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit';
-import peopleReducer from './slices/peopleSlice';
-import vehiclesReducer from './slices/vehiclesSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import peopleReducer from "./slices/peopleSlice";
+import vehiclesReducer from "./slices/vehiclesSlice";
+
+export const rootReducer = {
+  people: peopleReducer,
+  vehicles: vehiclesReducer
+};
 
 const store = configureStore({
-  reducer: {
-    people: peopleReducer,
-    vehicles: vehiclesReducer,
-  },
+  reducer: rootReducer
 });
 
 export default store;

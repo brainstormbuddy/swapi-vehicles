@@ -1,23 +1,18 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-export const fetchPeople = createAsyncThunk(
-  'people/fetchPeople',
-  async ({ search = '', page = 1 }) => {
-    const response = await axios.get(
-      `https://swapi.dev/api/people/?search=${search}&page=${page}`
-    );
-    return { results: response.data.results, count: response.data.count };
-  }
-);
+export const fetchPeople = createAsyncThunk("people/fetchPeople", async ({ search = "", page = 1 }) => {
+  const response = await axios.get(`https://swapi.dev/api/people/?search=${search}&page=${page}`);
+  return { results: response.data.results, count: response.data.count };
+});
 
 const peopleSlice = createSlice({
-  name: 'people',
+  name: "people",
   initialState: {
     people: [],
     loading: false,
     error: null,
-    count: 0,
+    count: 0
   },
   reducers: {},
   extraReducers: builder => {
@@ -34,7 +29,7 @@ const peopleSlice = createSlice({
         state.loading = false;
         state.error = action.error.message;
       });
-  },
+  }
 });
 
 export default peopleSlice.reducer;

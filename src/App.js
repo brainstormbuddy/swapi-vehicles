@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchPeople } from './store/slices/peopleSlice';
-import PeopleList from './components/PeopleList';
-import { Container, TextField, Typography, Pagination } from '@mui/material';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchPeople } from "./store/slices/peopleSlice";
+import PeopleList from "./components/PeopleList";
+import { Container, TextField, Typography, Pagination } from "@mui/material";
+import "./App.css";
 
 const App = () => {
   const dispatch = useDispatch();
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const count = useSelector(state => state.people.count);
   const totalPages = Math.ceil(count / 10);
@@ -38,13 +38,13 @@ const App = () => {
         onChange={handleSearchChange}
         margin="normal"
       />
-      <PeopleList />
+      <PeopleList data-testid="people-container" />
       <Pagination
         count={totalPages}
         page={page}
         onChange={handlePageChange}
         color="primary"
-        style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}
+        style={{ marginTop: "20px", marginBottom: "20px", display: "flex", justifyContent: "center" }}
       />
     </Container>
   );

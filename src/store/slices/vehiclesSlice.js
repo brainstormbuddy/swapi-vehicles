@@ -1,22 +1,17 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-export const fetchVehicles = createAsyncThunk(
-  'vehicles/fetchVehicles',
-  async vehicleUrls => {
-    const vehicles = await Promise.all(
-      vehicleUrls.map(url => axios.get(url).then(res => res.data))
-    );
-    return vehicles;
-  }
-);
+export const fetchVehicles = createAsyncThunk("vehicles/fetchVehicles", async vehicleUrls => {
+  const vehicles = await Promise.all(vehicleUrls.map(url => axios.get(url).then(res => res.data)));
+  return vehicles;
+});
 
 const vehiclesSlice = createSlice({
-  name: 'vehicles',
+  name: "vehicles",
   initialState: {
     vehicles: [],
     loading: false,
-    error: null,
+    error: null
   },
   reducers: {},
   extraReducers: builder => {
@@ -32,7 +27,7 @@ const vehiclesSlice = createSlice({
         state.loading = false;
         state.error = action.error.message;
       });
-  },
+  }
 });
 
 export default vehiclesSlice.reducer;
